@@ -4,16 +4,19 @@
 // of patent rights can be found in the PATENTS file in the same directory.
 #include <cstdio>
 #include <string>
+#include <iostream>
 
 #include "rocksdb/db.h"
 #include "rocksdb/slice.h"
 #include "rocksdb/options.h"
 
+using namespace std;
 using namespace rocksdb;
 
 std::string kDBPath = "/tmp/rocksdb_simple_example";
 
 int main() {
+  cout << "Inicio ejemplo simple" << endl;
   DB* db;
   Options options;
   // Optimize RocksDB. This is the easiest way to get RocksDB to perform well
@@ -50,6 +53,8 @@ int main() {
   assert(value == "value");
 
   delete db;
+
+  cout << "Si llegue hasta aca todo andubo bien :)" << endl;
 
   return 0;
 }
