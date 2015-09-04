@@ -28,6 +28,7 @@ addons:
           - zlib1g-dev
           - libbz2-dev
           - libsnappy-dev
+          - tree
 
 before_install:
   - mkdir -p root/bin root/usr/bin root/usr/lib root/usr/include
@@ -48,6 +49,7 @@ install:
   - dpkg-deb -x rocksdb_3.10-0.deb `pwd`/root/
 
 script:
+  - tree
   - mkdir build
   - cd build && cmake ../ && make && ./simple_example
   - cd -
