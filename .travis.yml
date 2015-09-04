@@ -49,7 +49,5 @@ install:
 
 script:
   - mkdir build
-  - cd build
-  - cmake ../
-  - make
-  - ./simple_example
+  - cd build && cmake ../ && make && ./simple_example
+  - cd -
